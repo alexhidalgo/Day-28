@@ -4,18 +4,34 @@
 	<meta charset="UTF-8">
 	<title>Image Board</title>
 	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body ng-app='app'>
 	<div ng-controller="HttpCtrl">
-		<label for="">caption</label>
-		<input type="text" ng-model="caption">
-		<label for="">image</label>
-		<input type="text" ng-model="image">
-		<button type="submit" ng-click="sendData(caption, image)">submit</button>
-		<ul>
-			<li ng-repeat="caption in messages">{{ caption.caption }}</li>
-			<img ng-repeat="image in messages" ng-src="{{ image.image }}"></img>
-		</ul>
+
+		<div class="top-header">
+
+			<i ng-click="showInputs()" class="icon ion-plus-circled"></i>
+
+			<div ng-show="plusClicked || activeWindow">
+				<label>caption</label>
+				<input placeholder="caption" type="text" ng-model="caption">
+				<label>image</label>
+				<input placeholder="image URL" type="text" ng-model="image">
+				<button class="submit-button" type="submit" ng-click="sendData(caption, image)">submit</button>
+				<button class="cancel-button"><i class="icon ion-image"></i>Cancel</button>
+			</div>
+
+
+		</div>
+
+		<div class="image-board">
+			<div ng-repeat="message in messages"class="image-card">
+				<img ng-src="{{ message.image }}"></img>
+				<div class="caption-box">{{ message.caption }}</div>
+			</div>
+		</div>
+
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
@@ -23,3 +39,6 @@
 	<script src="scripts/controllers.js"></script>
 </body>
 </html>
+
+
+

@@ -1,5 +1,51 @@
 angular.module('app.controllers', [])
-.controller('HttpCtrl', function($scope, $http) {
+.controller('HttpCtrl', function($scope, $http, $window) {
+
+	$scope.activeWindow = false;
+
+	// setInterval(function() {
+
+	// 	if(	window.innerWidth > 1000 ) {
+	// 		console.log(window.innerWidth);
+	// 		$scope.activeWindow = true;
+	// 	}
+	// }, 1000);
+
+	// $scope.$watch(function(){
+ //       return $window.innerWidth;
+ //    }, function(value) {
+ //    	if(value > 1000) {
+ //    		$scope.activeWindow = true;
+ //    		console.log(window.onresize);
+ //    	} else if (value <= 1000) {
+ //    		$scope.activeWindow = false;
+ //    	}
+ //   });
+
+	// window.onresize = function(){
+ //        $scope.$apply();
+
+ //    };
+
+ 	window.onresize = resize;
+
+ 	function resize() {
+
+ 		if ( window.innerWidth > 1000 ) {
+ 			$scope.activeWindow = true;
+ 			console.log($scope.activeWindow);
+ 		} else {
+ 			$scope.activeWindow = false;
+ 		}
+
+	}
+
+
+	$scope.plusClicked = false;
+
+	$scope.showInputs = function() {
+		$scope.plusClicked = !$scope.plusClicked ;
+	};
 
 	$scope.caption = '';
 	$scope.image = '';
@@ -21,20 +67,21 @@ angular.module('app.controllers', [])
 		var validHttp = false;
 		var validCaption = false;
 
-			if($scope.image.substring(0, 7) === 'http://' || 'https://') {
+			if(image.substring(0, 7) === 'http://' || image.substring(0, 8) === 'https://') {
 				validHttp = true;
 				console.log('check http is valid');
 			}
 
-			if($scope.caption !== '') {
+			if(caption !== '') {
 				validCaption = true;
 				console.log('check caption is valid');
-				console.log(validCaption);
 			}
 
 			if(validCaption === true && validHttp === true) {
 				$http.post('http://tiny-pizza-server.herokuapp.com/collections/alex-http', { caption: caption, image: image });
 				console.log('inputs valid and posted');
+				// $scope.caption = '';
+				// $scope.image = '';
 			}
 	};
 });
