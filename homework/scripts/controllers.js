@@ -58,7 +58,7 @@ angular.module('app.controllers', [])
 			if(response[i].caption && response[i].image) {
 				$scope.messages.push(response[i]);
 			}
-		}
+		} console.log($scope.messages);
 	})
 	.error(function(err){
 		console.log(err);
