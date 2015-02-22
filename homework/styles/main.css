@@ -31,10 +31,12 @@ button {
 .top-header .ion-image {
 	margin-right: 1em;
 	font-size: 2em;
+	display: none;
 }
 
 button .cancel-button {
 	text-align: center;
+	display: inline-block;
 }
 
 .ion-plus-circled {
