@@ -10,13 +10,11 @@ input {
 }
 
 button {
-	background-color: grey;
 	color: white;
 	border-radius: 0.5em;
 	-moz-border-radius: 0.5em;
 	-webkit-border-radius: 0.5em;
-	border-color: grey;
-	padding: 0.5em;
+	font-size: 0.9em;
 }
 
 
@@ -30,13 +28,22 @@ button {
 
 .top-header .ion-image {
 	margin-right: 1em;
-	font-size: 2em;
-	display: none;
+	font-size: 3em;
+	line-height: 1.4em;
 }
 
-button .cancel-button {
-	text-align: center;
-	display: inline-block;
+.cancel-button {
+	padding: 1.1em 1em;
+	background-color: grey;
+	border-color: grey;
+
+
+}
+
+.submit-button {
+	padding: 0.5em;
+	background-color: #17AA56;
+	border-color: #02A247;
 }
 
 .ion-plus-circled {
@@ -68,6 +75,6 @@ button .cancel-button {
 /* desktop */
 @media(min-width: 1000px){
 	.top-header .ion-image {
-	display: inline-block;
+
 }
 }
