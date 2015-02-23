@@ -13,12 +13,17 @@
 
 			<i ng-click="showInputs()" class="icon ion-plus-circled"></i>
 
-			<div ng-show="plusClicked || activeWindow">
+			<div class="input-form" ng-show="plusClicked || activeWindow">
 				<label>caption</label>
 				<input placeholder="caption" type="text" ng-model="caption">
 				<label>image</label>
 				<input placeholder="image URL" type="text" ng-model="image">
-				<button class="submit-button" type="submit" ng-click="sendData(caption, image)"><i class="icon ion-image"></i>Add Image</button>
+				<button class="submit-button" type="submit" ng-click="sendData(caption, image)"><i class="icon ion-image"></i>
+					<div>
+						Add Image
+					</div>
+
+				</button>
 				<button class="cancel-button">Cancel</button>
 			</div>
 
@@ -33,7 +38,7 @@
 		</div>
 
 	</div>
-
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 	<script src="scripts/app.js"></script>
 	<script src="scripts/controllers.js"></script>

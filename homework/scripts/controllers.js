@@ -27,17 +27,21 @@ angular.module('app.controllers', [])
 
  //    };
 
- 	window.onresize = resize;
+ // 	window.onresize = resize;
 
- 	function resize() {
+ // 	function resize() {
 
- 		if ( window.innerWidth > 1000 ) {
- 			$scope.activeWindow = true;
- 			console.log($scope.activeWindow);
- 		} else {
- 			$scope.activeWindow = false;
- 		}
+ // 		if ( window.innerWidth > 1000 ) {
+ // 			$scope.activeWindow = true;
+ // 			console.log($scope.activeWindow);
+ // 		} else {
+ // 			$scope.activeWindow = false;
+ // 		}
 
+	// }
+
+	if ($(window).width() > 1000) {
+		$scope.activeWindow = true;
 	}
 
 
@@ -58,7 +62,7 @@ angular.module('app.controllers', [])
 			if(response[i].caption && response[i].image) {
 				$scope.messages.push(response[i]);
 			}
-		} console.log($scope.messages);
+		}
 	})
 	.error(function(err){
 		console.log(err);

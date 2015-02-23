@@ -15,6 +15,18 @@ button {
 	-moz-border-radius: 0.5em;
 	-webkit-border-radius: 0.5em;
 	font-size: 0.9em;
+	position: relative;
+}
+
+button div {
+	display: inline-block;
+	position: relative;
+	right: 1em;
+	bottom: 0.7em;
+}
+
+.input-form {
+	position: relative;
 }
 
 
@@ -27,23 +39,26 @@ button {
 }
 
 .top-header .ion-image {
-	margin-right: 1em;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
 	font-size: 3em;
-	line-height: 1.4em;
+	line-height: 1.2em;
 }
 
 .cancel-button {
 	padding: 1.1em 1em;
 	background-color: grey;
 	border-color: grey;
+	position: relative;
+	bottom: 0.8em;
 
 
 }
 
 .submit-button {
-	padding: 0.5em;
 	background-color: #17AA56;
 	border-color: #02A247;
+	padding: 0;
 }
 
 .ion-plus-circled {
@@ -74,7 +89,7 @@ button {
 
 /* desktop */
 @media(min-width: 1000px){
-	.top-header .ion-image {
-
-}
+	.form-input {
+		display: block;
+	}
 }
