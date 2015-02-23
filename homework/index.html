@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
+	<link rel="stylesheet" href="styles/reset.css">
+
 <body ng-app='app'>
 	<div ng-controller="HttpCtrl">
 
@@ -18,13 +20,13 @@
 				<input placeholder="caption" type="text" ng-model="caption">
 				<label>image</label>
 				<input placeholder="image URL" type="text" ng-model="image">
-				<button class="submit-button" type="submit" ng-click="sendData(caption, image)"><i class="icon ion-image"></i>
-					<div>
-						Add Image
-					</div>
 
-				</button>
-				<button class="cancel-button">Cancel</button>
+				<div>
+					<button class="submit-button" type="submit" ng-click="sendData(caption, image)"><i class="icon ion-image"></i>Add Image</button>
+					<button class="cancel-button">Cancel</button>
+				</div>
+
+
 			</div>
 
 

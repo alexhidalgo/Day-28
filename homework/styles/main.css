@@ -20,9 +20,7 @@ button {
 
 button div {
 	display: inline-block;
-	position: relative;
-	right: 1em;
-	bottom: 0.7em;
+
 }
 
 .input-form {
@@ -42,16 +40,12 @@ button div {
 	margin-right: 0.5em;
 	margin-left: 0.5em;
 	font-size: 3em;
-	line-height: 1.2em;
 }
 
 .cancel-button {
 	padding: 1.1em 1em;
 	background-color: grey;
 	border-color: grey;
-	position: relative;
-	bottom: 0.8em;
-
 
 }
 
@@ -79,12 +73,12 @@ button div {
 
 	}
 
-	.image-card .caption-box {
-		background-color: white;
-		height: 3em;
-		padding: 2em;
-		margin-bottom: 2.2em;
-		color: grey;
+.image-card .caption-box {
+	background-color: white;
+	height: 3em;
+	padding: 2em;
+	margin-bottom: 2.2em;
+	color: grey;
 	}
 
 /* desktop */
