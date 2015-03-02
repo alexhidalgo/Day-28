@@ -1,5 +1,5 @@
 angular.module('app.controllers', [])
-.controller('HttpCtrl', function($scope, $http, $window) {
+.controller('HttpCtrl', function($scope, $http, $window, $interval) {
 
 	$scope.activeWindow = false;
 
@@ -54,7 +54,9 @@ angular.module('app.controllers', [])
 	$scope.caption = '';
 	$scope.image = '';
 
-	$http.get('http://tiny-pizza-server.herokuapp.com/collections/alex-http')
+	$interval(function(){
+
+		$http.get('http://tiny-pizza-server.herokuapp.com/collections/alex-http')
 	.success(function(response){
 
 		$scope.messages = [];
@@ -67,6 +69,11 @@ angular.module('app.controllers', [])
 	.error(function(err){
 		console.log(err);
 	});
+
+	}, 1000);
+
+
+
 	$scope.sendData = function(caption, image) {
 		var validHttp = false;
 		var validCaption = false;
